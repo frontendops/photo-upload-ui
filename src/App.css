@@ -21,86 +21,116 @@ time, mark, audio, video {
     box-sizing: border-box;
 }
 
-#main-heading-container {
-  padding: 2rem;
-  text-align: center;
-  color: #fff;
-  background-color: #1E3247;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
+@media only screen and (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+    #main-heading-container {
+        padding: 2rem;
+        text-align: center;
+        color: #fff;
+        background-color: #1E3247;
+        min-height: 100vh;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 3px #1E3247 solid;
+      }
+      
+      .info-scroll {
+          margin-top: 64px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+      }
+      
+      .info-scroll-heading {
+          font-weight: bold;
+      }
+      
+      /* header {
+          padding-top: 5rem;
+          width: 800px;
+          margin: 0 auto;
+      } */
+      
+      .main-heading, .photo-service {
+          /* font-size: 58px; tablet to desktop*/ 
+          font-size: 36px;
+          /* letter-spacing: 8px; */
+          letter-spacing: 7px;
+          padding: 15px 0px;
+          text-transform: uppercase;
+          font-family: 'Zen Kaku Gothic Antique', 'Arial Narrow', Arial, sans-serif;
+      }
+      
+      .main-info, .info-container {
+          font-family: 'EB Garamond', serif;
+          /* font-size: 21px; */
+          font-size: 1rem;
+          /* letter-spacing: 3px; */
+          letter-spacing: 2px;
+          padding: 8px 0px;
+      }
+      
+      .info-container {
+          font-size: 1rem;
+          /* max-width: 800px; */
+          margin: 0 auto;
+      }
+      
+      .photo-service {
+          padding-top: 2.5rem;
+          /* font-size: 28px; */
+          font-size: 1rem;
+          letter-spacing: 4px;
+      }
 
-.spacer {
-    aspect-ratio: 675/900;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+    /* Photo section */
+    .spacer {
+        aspect-ratio: 675/900;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: #1E3247;
+        padding-top: 10px;
+    }
 
-.layer1 {
-    background-image: url(./assets/wave-haikei.svg);
-}
+    .layer1 {
+        background-image: url(./assets/wave-haikei.svg);
+    }
 
-#main-content-container {
-    height: 300px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
+    .main-content-photo-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-content-photo-header h3 {
+        font-size: 36px;
+        font-weight: bold;
+    }
 
-.main-content-photo-header {
-    max-width: 400px;
-    max-height: 300px;
-}
+    #main-content-container {
+        height: 300px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
 
-.main-content-photo-header h3 {
-    font-size: 36px;
-    font-weight: bold;
-}
+    .photo-capture-label {
+        /* font-weight: bold; */
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+        background-color: #1E3247;
+        padding: 0.5em;
+        /* border: thin solid grey; */
+        border-radius: 8px;
+    }
 
-.info-scroll {
-    margin-top: 64px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    #photo-capture {
+    visibility: hidden;
+    }
 }
-
-.info-scroll-heading {
-    font-weight: bold;
-}
-
-header {
-    padding-top: 5rem;
-    width: 800px;
-    margin: 0 auto;
-}
-
-.main-heading, .photo-service {
-    font-size: 58px;
-    letter-spacing: 8px;
-    padding: 15px 0px;
-    text-transform: uppercase;
-    font-family: 'Zen Kaku Gothic Antique', 'Arial Narrow', Arial, sans-serif;
-}
-
-.main-info, .info-container {
-    font-family: 'EB Garamond', serif;
-    font-size: 21px;
-    letter-spacing: 3px;
-    padding: 8px 0px;
-}
-
-.info-container {
-    font-size: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.photo-service {
-    padding-top: 2.5rem;
-    font-size: 28px;
-    letter-spacing: 4px;
-}
-

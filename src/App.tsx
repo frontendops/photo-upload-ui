@@ -45,7 +45,16 @@ function App() {
       <div className="spacer layer1"></div>
       <section id="main-content-container">
         <div className="main-content-photo-header">
-          <h3>Access coming soon</h3>
+          <label for="photo-capture" className="photo-capture-label">
+            Capture image
+          </label>
+          <input
+            type="file"
+            name="photo-capture"
+            id="photo-capture"
+            accept="image/*"
+            capture="environment"
+          />
         </div>
       </section>
     </main>
