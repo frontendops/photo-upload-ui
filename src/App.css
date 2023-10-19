@@ -21,116 +21,143 @@ time, mark, audio, video {
     box-sizing: border-box;
 }
 
+main {
+    width: 100%;
+}
+
+#main-heading-container {
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    background-color: #1E3247;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 3px #1E3247 solid;
+  }
+  
+  .info-scroll {
+      margin-top: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+  }
+  
+  .info-scroll-heading {
+      font-weight: bold;
+  }
+
+  .main-heading, .photo-service {
+      padding: 15px 0px;
+      text-transform: uppercase;
+      font-family: 'Zen Kaku Gothic Antique', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .main-info, .info-container {
+      font-family: 'EB Garamond', serif;
+      padding: 8px 0px;
+  }
+  
+  .info-container {
+      font-size: 1rem;
+      margin: 0 auto;
+  }
+  
+  .photo-service {
+      padding-top: 2.5rem;
+      letter-spacing: 4px;
+  }
+
+/* Photo section */
+.spacer {
+    aspect-ratio: 675/900;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #1E3247;
+    padding-top: 10px;
+}
+
+.layer1 {
+    background-image: url(./assets/wave-haikei.svg);
+}
+
+.main-content-photo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content-photo-header h3 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#main-content-container {
+    height: 300px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.photo-capture-label {
+    /* font-weight: bold; */
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    background-color: #1E3247;
+    padding: 0.5em;
+    /* border: thin solid grey; */
+    border-radius: 8px;
+}
+
+#photo-capture {
+visibility: hidden;
+}
+
+/* Mobile size */
 @media only screen and (max-width: 600px) {
-    main {
-        width: 100%;
-    }
-    #main-heading-container {
-        padding: 2rem;
-        text-align: center;
-        color: #fff;
-        background-color: #1E3247;
-        min-height: 100vh;
-        width: 100%;
-        box-sizing: border-box;
-        border-bottom: 3px #1E3247 solid;
-      }
-      
-      .info-scroll {
-          margin-top: 64px;
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-      }
-      
-      .info-scroll-heading {
-          font-weight: bold;
-      }
-      
-      /* header {
-          padding-top: 5rem;
-          width: 800px;
-          margin: 0 auto;
-      } */
-      
-      .main-heading, .photo-service {
-          /* font-size: 58px; tablet to desktop*/ 
-          font-size: 36px;
-          /* letter-spacing: 8px; */
-          letter-spacing: 7px;
-          padding: 15px 0px;
-          text-transform: uppercase;
-          font-family: 'Zen Kaku Gothic Antique', 'Arial Narrow', Arial, sans-serif;
-      }
-      
-      .main-info, .info-container {
-          font-family: 'EB Garamond', serif;
-          /* font-size: 21px; */
-          font-size: 1rem;
-          /* letter-spacing: 3px; */
-          letter-spacing: 2px;
-          padding: 8px 0px;
-      }
-      
-      .info-container {
-          font-size: 1rem;
-          /* max-width: 800px; */
-          margin: 0 auto;
-      }
-      
-      .photo-service {
-          padding-top: 2.5rem;
-          /* font-size: 28px; */
-          font-size: 1rem;
-          letter-spacing: 4px;
-      }
-
-    /* Photo section */
-    .spacer {
-        aspect-ratio: 675/900;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-color: #1E3247;
-        padding-top: 10px;
-    }
-
-    .layer1 {
-        background-image: url(./assets/wave-haikei.svg);
-    }
-
-    .main-content-photo-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .main-content-photo-header h3 {
+    .main-heading, .photo-service {
         font-size: 36px;
-        font-weight: bold;
+        letter-spacing: 7px;
     }
 
-    #main-content-container {
-        height: 300px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-content: center;
+    .main-info, .info-container {
+        font-size: 1rem;
+        letter-spacing: 2px;
     }
 
-    .photo-capture-label {
-        /* font-weight: bold; */
-        color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-        letter-spacing: 1px;
-        background-color: #1E3247;
-        padding: 0.5em;
-        /* border: thin solid grey; */
-        border-radius: 8px;
+    .photo-service {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet -> Desktop size */
+@media only screen and (min-width: 601px) {
+    header {
+        padding-top: 5rem;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
-    #photo-capture {
-    visibility: hidden;
+    .main-heading, .photo-service {
+        font-size: 58px; 
+        letter-spacing: 8px;
     }
+
+    .main-info, .info-container {
+        font-size: 21px;
+        letter-spacing: 3px;
+    }
+
+    .info-container {
+        max-width: 800px;
+    }
+
+    .photo-service {
+        font-size: 28px;
+    }
+  
 }
