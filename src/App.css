@@ -103,13 +103,11 @@ main {
 }
 
 .photo-capture-label {
-    /* font-weight: bold; */
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     background-color: #1E3247;
     padding: 0.5em;
-    /* border: thin solid grey; */
     border-radius: 8px;
 }
 
