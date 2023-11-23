@@ -1,0 +1,19 @@
+CachePolicyConfig:  # [REQUIRED] A cache policy configuration.
+  Comment: ''  # A comment to describe the cache policy.
+  Name: 'photo-app-cache-policy' # [REQUIRED] A unique name to identify the cache policy.
+  DefaultTTL: 600 # The default amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated.
+  MaxTTL: 7200 # The maximum amount of time, in seconds, that objects stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated.
+  MinTTL: 300 # [REQUIRED] The minimum amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated.
+  ParametersInCacheKeyAndForwardedToOrigin: # The HTTP headers, cookies, and URL query strings to include in the cache key.
+    EnableAcceptEncodingGzip: true  # [REQUIRED] A flag that can affect whether the Accept-Encoding HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.
+    EnableAcceptEncodingBrotli: true # A flag that can affect whether the Accept-Encoding HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.
+    HeadersConfig: # [REQUIRED] An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
+      HeaderBehavior: none  # [REQUIRED] Determines whether any HTTP headers are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are: none, whitelist.
+    CookiesConfig: # [REQUIRED] An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
+      CookieBehavior: none  # [REQUIRED] Determines whether any cookies in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are: none, whitelist, allExcept, all.
+    QueryStringsConfig: # [REQUIRED] An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
+      QueryStringBehavior: none  # [REQUIRED] Determines whether any URL query strings in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are: none, whitelist, allExcept, all.
+      # QueryStrings: # Contains the specific query strings in viewer requests that either  are  or  are not  included in the cache key and automatically included in requests that CloudFront sends to the origin.
+      #   Quantity: 0  # [REQUIRED] The number of query string names in the Items list.
+      #   Items: # A list of query string names.
+      #   - ''

@@ -1,9 +1,9 @@
-import { useState } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
+import PhotoCapture from "./PhotoCapture";
+
+// const redirectLink = 'https://www.theknot.com/us/katelyn-terrell-and-alejandro-sierra-mar-2024'
 
 const betweenDays = (): number => {
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
@@ -30,7 +30,7 @@ function App() {
         <div className="info-container">
           <p>
             We want to capture moments of our special day and want you to be
-            involved. Powered by AWS, we'll be able to store memories you make
+            part of it. Powered by AWS, we'll be able to store memories you make
             throughout the day.
           </p>
 
@@ -43,20 +43,7 @@ function App() {
         </div>
       </section>
       <div className="spacer layer1"></div>
-      <section id="main-content-container">
-        <div className="main-content-photo-header">
-          <label for="photo-capture" className="photo-capture-label">
-            Capture image
-          </label>
-          <input
-            type="file"
-            name="photo-capture"
-            id="photo-capture"
-            accept="image/*"
-            capture="environment"
-          />
-        </div>
-      </section>
+      <PhotoCapture />
     </main>
   );
 }

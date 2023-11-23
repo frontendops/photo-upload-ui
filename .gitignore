@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# AWS
+
+.aws-sam/*
+template.yaml
