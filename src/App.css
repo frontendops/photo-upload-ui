@@ -145,7 +145,6 @@ width: 0px;
     }
 
     .image-list-container {
-        /* max-width: 500px; */
         padding-top: 32px;
     }
 
@@ -178,6 +177,17 @@ width: 0px;
 
     .photo-service {
         font-size: 28px;
+    }
+
+    #main-content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: -600px;
+
+    }
+
+    .image-list-container {
+        padding-top: 64px;
     }
   
 }
