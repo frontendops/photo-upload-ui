@@ -2,7 +2,7 @@ import { ImageList, ImageListItem } from "@mui/material";
 import "./App.css";
 import { useState } from "react";
 
-const maxPhotos: number = 1;
+const maxPhotos: number = 12;
 
 function PhotoCapture() {
   const [images, setImages] = useState<string[]>([]);
