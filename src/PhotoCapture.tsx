@@ -1,11 +1,15 @@
 import { ImageList, ImageListItem } from "@mui/material";
 import "./App.css";
 import { useState } from "react";
+import { photoUpload } from "./web-apis";
+import ImageModal from "./ImageModal";
 
 const maxPhotos: number = 12;
 
 function PhotoCapture() {
   const [images, setImages] = useState<string[]>([]);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [modalImage, setModalImage] = useState<string>("");
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target !== null && e.target.files) {
@@ -17,6 +21,15 @@ function PhotoCapture() {
         ]);
       }
     }
+  };
+
+  const handleSubmit = () => {
+    photoUpload();
+  };
+
+  const handleImageClick = (image: string) => {
+    setShowModal(true);
+    setModalImage(image);
   };
 
   return (
@@ -41,8 +54,10 @@ function PhotoCapture() {
             onChange={handleFileUpload}
           />
         </div>
-        {images.length >= maxPhotos ? (
-          <div className="photo-capture-label submit">Submit images</div>
+        {images.length >= 1 ? (
+          <div className="photo-capture-label submit" onClick={handleSubmit}>
+            Submit images
+          </div>
         ) : null}
       </div>
       <div className="image-list-container">
@@ -50,6 +65,7 @@ function PhotoCapture() {
           {images.map((image, idx) => (
             <ImageListItem key={image}>
               <img
+                onClick={() => handleImageClick(image)}
                 srcSet={`${image}`}
                 src={`${image}`}
                 alt={`Image of wedding - ${idx}`}
@@ -59,6 +75,22 @@ function PhotoCapture() {
           ))}
         </ImageList>
       </div>
+      {showModal ? (
+        <ImageModal
+          onClose={() => {
+            setShowModal(false);
+          }}
+        >
+          <img
+            srcSet={`${modalImage}`}
+            src={`${modalImage}`}
+            alt={`Modal with image`}
+            loading="lazy"
+            height={500}
+            width={330}
+          />
+        </ImageModal>
+      ) : null}
     </section>
   );
 }

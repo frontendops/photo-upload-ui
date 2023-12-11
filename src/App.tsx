@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import PhotoCapture from "./PhotoCapture";
-
 // const redirectLink = 'https://www.theknot.com/us/katelyn-terrell-and-alejandro-sierra-mar-2024'
 
 const betweenDays = (): number => {
