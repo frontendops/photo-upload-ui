@@ -1,1 +1,1 @@
-export const photoUploadUrl = `https://3o4ialbql7.execute-api.us-east-1.amazonaws.com/Prod/photo-upload?userId=999`
+export const photoUploadUrl = `https://3o4ialbql7.execute-api.us-east-1.amazonaws.com/Prod/photo-upload`

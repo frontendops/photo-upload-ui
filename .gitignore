@@ -28,3 +28,4 @@ dist-ssr
 .aws-sam/*
 template.yaml
 ./src/web-apis/invoke-details.js
+authkey.js
