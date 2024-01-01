@@ -1,6 +1,7 @@
 import { ImageList, ImageListItem } from "@mui/material";
 import "./App.css";
 import { useState } from "react";
+// @ts-ignore
 import { photoUpload } from "./web-apis/index.js";
 import ImageModal from "./ImageModal";
 
