@@ -26,10 +26,9 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-
 ### TODO List
 
 - [x] Save url query params to local storage
 - [ ] Save photos to local storage to re-open app later
-- [ ] Add button to delete individual photos
-- [ ] Show count of taken photos / available photos
+- [x] Add button to delete individual photos
+- [x] Show count of taken photos / available photos

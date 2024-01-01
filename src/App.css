@@ -106,27 +106,7 @@ main {
     padding: 16px
 }
 
-.photo-capture-label {
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 1px;
-    background-color: #1E3247;
-    padding: 1em;
-    border-radius: 8px;
-}
 
-.photo-capture-label.submit {
-    background-color: #32471e;
-}
-
-.photo-capture-label.disabled {
-    background-color: lightgray;
-}
-
-#photo-capture {
-visibility: hidden;
-width: 0px;
-}
 
 /* Mobile size */
 @media only screen and (max-width: 600px) {
@@ -206,18 +186,3 @@ width: 0px;
         gap: 32px !important;
     }
 }
-
-/* Photo gallery styling */
-.MuiImageListItem-root {
-    padding: 12px 12px 28px 12px;
-	background: #eee;
-    border-radius: 8px;
-    box-shadow:  0 3px 10px rgb(0 0 0 / 0.2);
-}
-
-.MuiImageListItem-root:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-

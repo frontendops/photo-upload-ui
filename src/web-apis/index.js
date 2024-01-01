@@ -1,6 +1,5 @@
 import axios from "axios";
 import { photoUploadUrl } from "./invoke-details.js";
-import { authKeyAPI } from "../../authkey.js";
 
 export const photoUpload = async (id, image, imageNumber) => {
   try {
@@ -10,10 +9,10 @@ export const photoUpload = async (id, image, imageNumber) => {
     }, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': authKeyAPI
+            'Authorization': localStorage.getItem('apiKey')
         },
         params: {
-            userId: id
+            userId: localStorage.getItem('userId')
         },
     });
 
@@ -22,4 +21,3 @@ export const photoUpload = async (id, image, imageNumber) => {
     console.error(error);
   }
 };
-
