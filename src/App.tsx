@@ -13,7 +13,21 @@ const betweenDays = (): number => {
   );
 };
 
+
 function App() {
+  const queryParams = new URLSearchParams(window.location.search)
+  // @ts-ignore
+  const userId: string = queryParams.get("userId")?.toString()
+  // @ts-ignore:
+  const name: string = queryParams.get("name")?.toString()
+  // @ts-ignore:
+  const apiKey: string = queryParams.get("apiKey")?.toString()
+
+  localStorage.setItem('userId', userId)
+  localStorage.setItem('name', name)
+  localStorage.setItem('apiKey', apiKey)
+
+  
   return (
     <main>
       <section id="main-heading-container">
