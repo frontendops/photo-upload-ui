@@ -16,8 +16,8 @@ export const photoUpload = async (id, image, imageNumber) => {
         },
     });
 
-    console.log(response.data)
+    return response.data
   } catch (error) {
-    console.error(error);
+    return error
   }
 };

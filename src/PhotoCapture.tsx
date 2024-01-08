@@ -1,4 +1,9 @@
-import { ImageList, ImageListItem } from "@mui/material";
+import {
+  Backdrop,
+  CircularProgress,
+  ImageList,
+  ImageListItem,
+} from "@mui/material";
 import "./App.css";
 import "./PhotoCapture.css";
 import { useState } from "react";
@@ -30,6 +35,7 @@ function PhotoCapture() {
   const [images, setImages] = useState<ModalImage[]>([]);
   const [rawImages, setRawImages] = useState<string[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [backdropOpen, setBackdropOpen] = useState<boolean>(false);
   const [modalImage, setModalImage] = useState<ModalImage>({
     blob: "",
     index: 0,
@@ -57,22 +63,35 @@ function PhotoCapture() {
     }
   };
 
-  // Function signature for asyncFunction
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  type AsyncFunctionType = () => Promise<any>;
-  const handleSubmit = () => {
+  const apiCalls = async () => {
     const imageUploadCalls: AsyncFunctionType[] = [];
     rawImages.forEach((image, idx) => {
       imageUploadCalls.push(() => photoUpload(999, image, idx));
     });
 
-    Promise.all([imageUploadCalls.map((call) => call())])
+    const results = await Promise.all(imageUploadCalls.map((call) => call()))
       .then((results) => {
         console.log("All promises resolved:", results);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+
+    return results;
+  };
+
+  // Function signature for asyncFunction
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type AsyncFunctionType = () => Promise<any>;
+
+  const handleSubmit = async () => {
+    // Set backdrop and loader
+    setBackdropOpen(true);
+
+    const results = await apiCalls();
+
+    setBackdropOpen(false);
+    console.log(results);
   };
 
   const handleImageClick = (image: string, index: number) => {
@@ -177,6 +196,15 @@ function PhotoCapture() {
             </div>
           </div>
         </ImageModal>
+      ) : null}
+
+      {backdropOpen ? (
+        <Backdrop open={backdropOpen}>
+          <div className="photo-loading-indicator">
+            Uploading images
+            <CircularProgress />
+          </div>
+        </Backdrop>
       ) : null}
     </section>
   );
