@@ -28,7 +28,12 @@ If you are developing a production application, we recommend updating the config
 
 ### TODO List
 
-- [x] Save url query params to local storage
+- [ ] Save url query params to local storage, userId
 - [ ] Save photos to local storage to re-open app later
 - [x] Add button to delete individual photos
 - [x] Show count of taken photos / available photos
+- [ ] Update styling for usability
+
+### API TODO List
+
+- [ ] Save photos in bucket by userName/ userId
